@@ -1,0 +1,60 @@
+name: Sotto
+options:
+  bundleIdPrefix: app.sotto
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+  xcodeVersion: "26.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_APPROACHABLE_CONCURRENCY: YES
+    SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    GENERATE_INFOPLIST_FILE: YES
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+
+targets:
+  Sotto:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sotto
+    entitlements:
+      path: Sotto/Support/Sotto.entitlements
+      properties:
+        com.apple.security.device.audio-input: true
+    info:
+      path: Sotto/Support/Info.plist
+      properties:
+        CFBundleDisplayName: Sotto
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSUIElement: true
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        NSMicrophoneUsageDescription: Sotto listens to your voice while you hold the push-to-talk key so it can transcribe what you say.
+        LSApplicationCategoryType: public.app-category.productivity
+        NSHumanReadableCopyright: © 2026 Sotto contributors. MIT License.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.sotto.Sotto
+        INFOPLIST_KEY_LSUIElement: YES
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Development"
+        DEVELOPMENT_TEAM: H7CSB5862U
+
+schemes:
+  Sotto:
+    build:
+      targets:
+        Sotto: all
+    run:
+      config: Debug
+    archive:
+      config: Release
