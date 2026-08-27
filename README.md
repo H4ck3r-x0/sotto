@@ -32,7 +32,7 @@ Hold the shortcut (default **Right ⌥**), speak, release. The transcript is cle
 
 1. Download `Sotto.zip` from the [latest release](https://github.com/H4ck3r-x0/sotto/releases/latest) and unzip it.
 2. Drag **Sotto.app** into your **Applications** folder.
-3. The first time, **right-click the app and choose Open** (macOS blocks unknown apps on double-click).
+3. Open it. macOS will say it "could not verify Sotto is free of malware": click **Done**, then go to **System Settings → Privacy & Security**, scroll down, and click **Open Anyway**. This happens once, because the app is not notarized by Apple.
 4. Grant **Microphone** and **Accessibility** when asked. That's it: hold Right ⌥ and talk.
 
 Requires macOS 26 or later on Apple silicon.
