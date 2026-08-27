@@ -28,7 +28,16 @@ Hold the shortcut (default **Right ⌥**), speak, release. The transcript is cle
 - Record any shortcut in Settings: a modifier, an F-key, or a combo like ⌥Space.
 - Removes filler words, fixes capitalization, and a personal dictionary keeps your jargon right.
 
-## Building
+## Install
+
+1. Download `Sotto.zip` from the [latest release](https://github.com/H4ck3r-x0/sotto/releases/latest) and unzip it.
+2. Drag **Sotto.app** into your **Applications** folder.
+3. The first time, **right-click the app and choose Open** (macOS blocks unknown apps on double-click).
+4. Grant **Microphone** and **Accessibility** when asked. That's it: hold Right ⌥ and talk.
+
+Requires macOS 26 or later on Apple silicon.
+
+## Building from source
 
 ```sh
 brew install xcodegen
@@ -37,11 +46,11 @@ xcodebuild -project Sotto.xcodeproj -scheme Sotto -configuration Release -derive
 cp -R build/Build/Products/Release/Sotto.app /Applications/
 ```
 
-Requires macOS 26+ on Apple silicon. On first launch grant **Microphone** and **Accessibility**. Re-run `xcodegen` after adding or removing source files.
+Re-run `xcodegen` after adding or removing source files.
 
 ## Tips
 
-- **Dictionary**: Settings → Dictation → Edit Dictionary…, one rule per line: `cloud code → Claude Code`.
+- **Dictionary**: Settings → Dictation → Edit Dictionary…, one rule per line: `x code → Xcode`.
 - **Globe key switches language instead?** System Settings → Keyboard → "Press Globe key to: **Do Nothing**".
 - **Debug log**: `defaults write app.sotto.Sotto debugLogging -bool YES`, then run the binary from a terminal.
 

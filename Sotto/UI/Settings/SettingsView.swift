@@ -117,7 +117,7 @@ private struct DictationSettingsTab: View {
                     }
                 }
             } footer: {
-                Text("Teach Sotto your names and jargon — “cloud code” → “Claude Code”.")
+                Text("Teach Sotto your names and jargon: “x code” becomes “Xcode”.")
             }
         }
         .formStyle(.grouped)

@@ -4,13 +4,13 @@ import Foundation
 ///
 /// Reads a plain-text file the user can edit directly. Two line formats:
 ///
-///     Claude Code                  ← canonical term: any case/spacing/hyphen
-///                                    variant ("cloud code", "claudecode")
+///     Xcode                        ← canonical term: any case/spacing/hyphen
+///                                    variant ("x code", "xcode")
 ///                                    is rewritten to exactly this
 ///     jason → JSON                 ← explicit replacement ("=" also works)
 ///
 /// Matching is case-insensitive, whole-word, longest-pattern-first so that
-/// e.g. a "cloud" rule can never corrupt "Cloudflare".
+/// e.g. a "java" rule can never corrupt "JavaScript".
 struct DictionaryCorrector {
     struct Rule {
         let pattern: NSRegularExpression
@@ -27,8 +27,8 @@ struct DictionaryCorrector {
     private static let template = """
     # Sotto dictionary — one rule per line.
     #
-    #   Claude Code          ← canonical term: "cloud code", "claudecode", …
-    #                          all become exactly "Claude Code"
+    #   Xcode                ← canonical term: "x code", "xcode", …
+    #                          all become exactly "Xcode"
     #   jason → JSON         ← explicit replacement ("=" also works)
     #
     # Matching is case-insensitive and whole-word. Lines starting with # are ignored.
